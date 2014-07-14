@@ -9,15 +9,6 @@ bool sortByScore(const ScoreTableElement& lhs,
   return (lhs.score > rhs.score); 
 }
 
-void CHighScores::SetFile(const std::string& name)
-{
-  if (name.size() == 0)
-    Filepath = DEFAULT_HS_FILE_PATH;
-  else
-    Filepath = name;
-  return;
-}
-
 void CHighScores::SetHighScore(int tn) 
 {
   TopNum = (0==tn) ? TOP_NUM : tn;
@@ -27,10 +18,10 @@ void CHighScores::SetHighScore(int tn)
 void CHighScores::InitializeHSTable()
 {
   HSTable.clear(); // reset Vector to empty
-  ifstream in_file(Filepath, ios::in);
+  ifstream in_file(DEFAULT_HS_FILE, ios::in);
   if(!in_file.good())
     {
-      DEBUG_LOG(0,"ERROR: Can't write to High Score file: "<< Filepath);
+      DEBUG_LOG(0,"ERROR: Can't write to High Score file: "<< DEFAULT_HS_FILE);
       return; 
     }
   ScoreTableElement tableElement;
@@ -50,12 +41,12 @@ void CHighScores::InitializeHSTable()
 
 void CHighScores::WriteHSTableToFile()
 {
-  DEBUG_LOG(1, "Opening file "<<Filepath);
+  DEBUG_LOG(1, "Opening file "<<DEFAULT_HS_FILE);
   // Open the file in out mode, truncing the previous incarnation
-  ofstream out_file(Filepath, ios::out); 
+  ofstream out_file(DEFAULT_HS_FILE, ios::out); 
   if(!out_file.good())
     {
-      DEBUG_LOG(0,"ERROR: Can't write to High Score file: "<< Filepath);
+      DEBUG_LOG(0,"ERROR: Can't write to High Score file: "<< DEFAULT_HS_FILE);
       return; 
     }
   vector<ScoreTableElement>::iterator i;
@@ -74,12 +65,12 @@ void CHighScores::WriteHSTableToFile()
 
 void CHighScores::AddNewScore(const string& newName, int newScore)
 {
-  DEBUG_LOG(1, "Opening file "<<Filepath);
-  ofstream out_file(Filepath, ios::app);
+  DEBUG_LOG(1, "Opening file "<<DEFAULT_HS_FILE);
+  ofstream out_file(DEFAULT_HS_FILE, ios::app);
 
   if(!out_file.good())
     {
-      DEBUG_LOG(0, "ERROR: Can't open High Score file "<<Filepath);
+      DEBUG_LOG(0, "ERROR: Can't open High Score file "<<DEFAULT_HS_FILE);
       return; 
     }
   out_file << newScore << " " << newName << endl;

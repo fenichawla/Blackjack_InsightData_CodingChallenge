@@ -27,8 +27,6 @@ int main(int argc, char** argv)
 	Logger::setLogLevel(argv[i+1]);
       if (string(argv[i]) == string("--numdecks"))
 	numDecks = atoi(argv[i+1]);
-      if (string(argv[i]) == string("--highscoresfile"))
-	filepath = argv[i+1];
       if (string(argv[i]) == string("--highscores"))
 	highScores = atoi(argv[i+1]);
     }
@@ -37,7 +35,7 @@ int main(int argc, char** argv)
   playerName = AskPlayerName();
   cout << "Hi " << playerName << "!" <<endl;
   
-  CBlackJack game(playerName, numDecks, filepath, highScores);
+  CBlackJack game(playerName, numDecks, highScores);
   
   typedef void (CBlackJack::*funcptr)();
   funcptr opts[4] = { &CBlackJack::ProvideRules, 

@@ -1,0 +1,27 @@
+#An Implementation of Blackjack - How to Run
+Version 1.0
+Written by Feni Chawla
+
+##BUILDING THE PROGRAM
+The program Source folder contains a Makefile, which can be used to build the executable. To build the executalbe, simply run the following from the command line:
+make clean 
+
+Followed by:
+make
+OR
+make release
+OR
+make debug
+
+The name of the executable created is Play.
+
+##HOW TO RUN
+To run the "Play" executable from the command line, use the following:
+./Play
+
+The following optional command line parameters are provided for variables that can be configured by the user:
+* --logfile <logfile path> --> Use this to specify path and name of logfile
+* --loglevel <integer log level> --> use this to specify log level of the messages that will be logged to the file
+* --numdecks <integet number of decks> --> Use this to specify number of decks used during the blackjack game
+* --highscores <integer number of high scores to print> --> Use this to specify the number of high scores that will be displayed
+

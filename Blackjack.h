@@ -48,7 +48,7 @@ class CBlackJack
 
   void EndHand(unsigned int);
  public:
-  CBlackJack(const std::string&, int, const std::string&, int);
+  CBlackJack(const std::string&, int, int);
 	
   // Function that is called from main()
   void StartGameWithNewPlayer();

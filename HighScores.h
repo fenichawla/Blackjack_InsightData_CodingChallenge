@@ -9,7 +9,7 @@
 #include <algorithm>
 #include "Logger.h"
 
-#define DEFAULT_HS_FILE_PATH "/tmp/BlackJackHighScores.txt"
+#define DEFAULT_HS_FILE "/tmp/BlackJackHighScores.txt"
 #define TOP_NUM 5
 
 struct ScoreTableElement
@@ -21,7 +21,6 @@ struct ScoreTableElement
 class CHighScores
 {
  private:
-  std::string Filepath;
   std::vector <ScoreTableElement> HSTable;
 
   void InitializeHSTable();
@@ -31,7 +30,6 @@ class CHighScores
  public:
   void DisplayHighScores();
   void AddNewScore(const std::string&, int);
-  void SetFile(const std::string&);
   void SetHighScore(int);
 };
 
