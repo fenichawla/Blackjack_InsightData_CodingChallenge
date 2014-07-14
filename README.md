@@ -1,6 +1,7 @@
 An Implementation of BlackJack
 ==============================
 Version 1.0
+
 Written by Feni Chawla
 
 ##ABOUT THIS PROGRAM
@@ -8,7 +9,7 @@ Written by Feni Chawla
 This program implements the popular casino game of BlackJack, using C++.
 
 ##ABOUT BLACKJACK
-BlackJack is one of the most widely played casino game. It is a comparing game between the dealer and the player, where the player plays against the dealer, but not against the other players. The player can beat the dealer in the following ways:
+BlackJack is one of the most widely played casino games. It is a comparing game between the dealer and the player, where the player plays against the dealer, but not against the other players. The player can beat the dealer in the following ways:
 * Get 21 points on the first 2 cards - called Blackjack
 * Reach final score higher than the dealer without exceeding 21
 * Let the dealer draw cards until his hand exceeds 21
@@ -19,8 +20,8 @@ en.wikipedia.org/wiki/Blackjack
 ##BLACKJACK TERMS USED IN THE PROGRAM
 * Blackjack Hand - Any hand of ACE plus 10 or face card (Jack, Queen, or King) irrespective of the suite
 * Hit - Hit is the act of taking the next card from the dealer 
-* Stand - Stand is an option for the player, where he/she can choose to take no more cards and "Stand"or stay with their current score
-* Double - Double is an option for the player, where the player can choose to double his/her wager. Follwoing this, the player is "Hit" once before he stands.
+* Stand - Stand is an option for the player, where he/she can choose to take no more cards and "Stand" or stay with their current score
+* Double - Double is an option for the player, where the player can choose to double his/her wager. Following this, the player is "Hit" once before he stands.
 * Bust - A player or dealer could go "Bust" if his/her hand exceeds a total of 21
 * Push - Push occurs when the player and dealer have the same score at the end of a hand. In the case of a push, the player does not lose his wager.
 
@@ -36,7 +37,7 @@ The payouts are calculated as the following:
 * Winning blackjack hand is paid at 3:2 (Rounded up for odd wager)
 * Winning non-blackjack hand is paid at 1:1
 * In case of loss, the player loses his wager
-* In case of Push, the player does not lose his wager, but does not win anythin ither
+* In case of Push, the player does not lose his wager, but does not win anything either
 
 ##PROGRAM STRUCTURE
 The program is divided into the following classes:
@@ -50,14 +51,16 @@ The program is divided into the following classes:
 
 * CHighScores - This class implements high scores functionality. It keeps track of the highest scores and stores them in a file. By default, the location of the high scores file is "/tmp/HighScores.txt" and the number of high scores maintained is 5. The number of high scores can be modified through a command line parameter.
 
-* CBlackJack - This class implements core blackjack functionality. It has objects of all other classes, and manages implements the sequence and logic for the game play, keeps track of player and dealer score, finds the winner and calculates payout and provides game rules and high scores.
+* CBlackJack - This class implements core blackjack functionality. It has objects of all other classes, and implements the sequence and logic for the game play, keeps track of player and dealer score, finds the winner and calculates payout and provides game rules and high scores.
 
-* namespace Logger - This namespace implements log messages used throughout the program for implementing logging functionality. This is used for writing debug logs to a file. Currently the log level has been set to a default of 2, which enables logging of all DEBUG_LOG messages with log level equal to and less than 2 to be logged. The log level can be modified through a command line parameter.
+* namespace Logger - This namespace implements log messages used throughout the program for implementing logging functionality. This is used for writing debug logs to a file. Currently the log level has been set to a default of 2, which enables logging of all DEBUG_LOG messages with log level equal to and less than 2. The log level can be modified through a command line parameter.
 
 * Messages.h file - This file implements functions for parsing and printing out messages to stdout and the log files. This is used throughout the program.
 
+*Makefile - A make file has been provided to compile and link the program. The name of the output executable file is "Play"
+
 ##BUILDING THE PROGRAM
-The program Source folder contains a Makefile, which can be used to build the executable. To build the executalbe, simply run the following from the command line:
+The program folder contains a Makefile, which can be used to build the executable. To build the executalbe, simply run the following from the command line:
 make clean 
 
 Followed by:
@@ -67,7 +70,7 @@ make release
 OR
 make debug
 
-The name of the executable created is Play.
+The name of the executable created is "Play".
 
 ##HOW TO RUN
 To run the "Play" executable from the command line, use the following:
