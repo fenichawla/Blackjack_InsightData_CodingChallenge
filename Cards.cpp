@@ -1,8 +1,8 @@
 #include <iostream>
 #include <iomanip>
-#include <string.h> //using C string header
-#include <stdlib.h>
-#include <time.h>
+#include <string>
+//#include <stdlib.h>
+//#include <time.h>
 #include <random>
 #include "Cards.h"
 #include "Logger.h"

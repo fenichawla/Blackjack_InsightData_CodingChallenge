@@ -3,12 +3,14 @@
 #include "Rulebook.h"
 #include <stdlib.h>
 
-CBlackJack::CBlackJack(string playerName, int numDecks, 
-		       int numHighScores)
+CBlackJack::CBlackJack(const std::string& playerName, int numDecks, 
+		       const std::string& highScoreFile, int numHighScores)
   :Player(playerName),
-   CardDeck(numDecks),
-   HighScoreHandler(numHighScores)
+   CardDeck(numDecks)
 {
+  HighScoreHandler.SetFile(highScoreFile);
+  HighScoreHandler.SetHighScore(numHighScores);
+  return;
 }
 
 void CBlackJack::ProvideRules()

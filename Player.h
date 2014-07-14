@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include <string.h> // Using C version of string
+#include <string> // Using C version of string
 #include "Logger.h"
 #include "Cards.h"
 
@@ -29,7 +29,7 @@ class CBasePlayer
  protected:
   
   // Variable that stores the player name
-  string PlayerName;
+  std::string PlayerName;
   // Vector of Cards seen so far in this hand
   vector <Cards::Card> Hand;
 
@@ -78,7 +78,7 @@ class CPlayer: public CBasePlayer
 	
  public:
   // Constructor
-  CPlayer(string name)
+  CPlayer(const std::string& name)
     {
       ChipsWagered = 0;
       RemainingChips = INITIAL_NUM_CHIPS;

@@ -9,11 +9,19 @@ bool sortByScore(const ScoreTableElement& lhs,
   return (lhs.score > rhs.score); 
 }
 
-CHighScores::CHighScores(int tn) 
+void CHighScores::SetFile(const std::string& name)
+{
+  if (name.size() == 0)
+    Filepath = DEFAULT_HS_FILE_PATH;
+  else
+    Filepath = name;
+  return;
+}
+
+void CHighScores::SetHighScore(int tn) 
 {
   TopNum = (0==tn) ? TOP_NUM : tn;
-
-  Filepath = DEFAULT_HS_FILE_PATH;
+  return;
 }
 
 void CHighScores::InitializeHSTable()
@@ -64,7 +72,7 @@ void CHighScores::WriteHSTableToFile()
   return;
 }
 
-void CHighScores::AddNewScore(string newName, int newScore)
+void CHighScores::AddNewScore(const string& newName, int newScore)
 {
   DEBUG_LOG(1, "Opening file "<<Filepath);
   ofstream out_file(Filepath, ios::app);

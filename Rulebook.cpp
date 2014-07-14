@@ -14,7 +14,7 @@ void DisplayRuleBook()
   cout << endl;
   cout << "Game flow: \n";
   cout << "You will be dealt 2 cards, and the dealer will be dealt 2 cards. ";
-  cout << "Based on these, you will be asked to select from the following:\n";
+  cout << "Based on these, you will be asked to select fro mthe following:\n";
   cout << "1. Hit - Take the next card from the dealer\n";
   cout << "2. Stand - Stay with current score\n";
   cout << "3. Double - Double your wager, then draw a card and stand\n";

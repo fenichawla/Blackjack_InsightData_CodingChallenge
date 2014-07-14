@@ -1,5 +1,5 @@
 #include "Logger.h"
-#include <string.h>  // Using C version of string
+#include <string>  // Using C version of string
 #include <stddef.h>
 #include <cstdlib>
 #include <iostream>

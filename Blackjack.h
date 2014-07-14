@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <vector>
-#include <string.h> // Using C version of string
+#include <string> // Using C version of string
 #include <stdlib.h>
 #include <math.h>
 #include "Player.h"
@@ -13,6 +13,7 @@
 
 #define HINT_NUM 3
 
+using namespace std;
 using namespace Logger;
 using namespace Cards;
 
@@ -47,7 +48,7 @@ class CBlackJack
 
   void EndHand(unsigned int);
  public:
-  CBlackJack(string, int, int);
+  CBlackJack(const std::string&, int, const std::string&, int);
 	
   // Function that is called from main()
   void StartGameWithNewPlayer();

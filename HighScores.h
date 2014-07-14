@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include <string.h>
+#include <string>
 #include <fstream>
 #include <vector>
 #include <algorithm>
@@ -12,29 +12,27 @@
 #define DEFAULT_HS_FILE_PATH "/tmp/BlackJackHighScores.txt"
 #define TOP_NUM 5
 
-using namespace std;
-
 struct ScoreTableElement
 {
-  string name;
+  std::string name;
   int score;
 };
 
 class CHighScores
 {
  private:
-  string Filepath;
-  vector <ScoreTableElement> HSTable;
+  std::string Filepath;
+  std::vector <ScoreTableElement> HSTable;
 
   void InitializeHSTable();
   void WriteHSTableToFile();
   int TopNum;
 
  public:
-  CHighScores(int);
-
   void DisplayHighScores();
-  void AddNewScore(string, int);
+  void AddNewScore(const std::string&, int);
+  void SetFile(const std::string&);
+  void SetHighScore(int);
 };
 
 

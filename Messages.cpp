@@ -11,14 +11,16 @@ void PrintAsteriskLine()
   cout << setfill('*') << setw(80) <<"" <<endl;
   return;
 }
+#define HAND_BEGINS_MESSAGE 
+#define HAND_QUIT_MESSAGE 
 
 void PrintHandBeginsMessage(string name, int remainder)
 {
   PrintAsteriskLine();
   cout << name << ", you have " << remainder << " chips to play with" ;
-  cout << endl << " " << setfill('-') << setw(strlen(HAND_BEGINS_MESSAGE)+2) <<"";
-  cout << endl << "| " << HAND_BEGINS_MESSAGE << " |";
-  cout << endl << " " << setfill('-') << setw(strlen(HAND_BEGINS_MESSAGE)+2) <<"";
+  cout << endl << "-----------------------------------";
+  cout << endl << "|May the odds ever be in your favor|";
+  cout << endl << "-----------------------------------";
   cout << endl;
   PrintAsteriskLine();
   return;
@@ -26,9 +28,9 @@ void PrintHandBeginsMessage(string name, int remainder)
 
 void PrintHandQuitMessage()
 {
-  cout << endl << " " << setfill('-') << setw(strlen(HAND_QUIT_MESSAGE)+2) <<"";
-  cout <<endl << "| " << HAND_QUIT_MESSAGE << " |";
-  cout << endl << " " << setfill('-') << setw(strlen(HAND_QUIT_MESSAGE)+2) <<"";
+  cout << endl << "------------------------------";
+  cout << endl << "|Remember - no guts, no glory|";
+  cout << endl << "------------------------------";
   cout <<endl;
   return;
 }

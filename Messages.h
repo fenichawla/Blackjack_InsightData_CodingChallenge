@@ -1,9 +1,11 @@
 #ifndef __MESSAGES_H__
 #define __MESSAGES_H__
 
-#include <string.h> // Using C version of string
+#include <string> // Using C version of string
 #include <iostream>
 #include <climits>
+
+using namespace std;
 
 enum RESULT_TYPE
   {
@@ -23,8 +25,6 @@ enum RESULT_TYPE
 		       std::cin.ignore(INT_MAX, '\n');
 
 
-#define HAND_BEGINS_MESSAGE "May the odds ever be in your favor"
-#define HAND_QUIT_MESSAGE "Remember - no guts, no glory"
 
 #define PLAYER_DOUBLE_ERROR_MESSAGE "Bummer! Not enough chips to double."
 
@@ -35,7 +35,6 @@ enum RESULT_TYPE
 void PrintAsteriskLine();
 void PrintPlayerScore(std::string, int);
 void PrintWelcomeMessage();
-//void DisplayRuleBook();
 void PrintExitMessage(std::string);
 void PrintHandQuitMessage();
 void PrintFinalScoreMessage();
